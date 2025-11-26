@@ -6,10 +6,12 @@
 }
 
 .offer {
+    z-index: 10;
+    position: fixed;
     display: flex;
+    justify-content: flex-end;
     background-color: rgb(255, 204, 000);
     border: 3px solid rgb(106, 11, 11);
-    padding: 20px;
     width: 100vw;
     height: 142px;
 }
@@ -18,14 +20,52 @@
     font-family: "Inter";
     font-weight: bolder;
     font-size: 36px;
+    margin-top: 45px;
 }
 .offer img {
-    flex: end;
     width: 59.5px;
     height: 59.5px;
+    margin-right: 60px;
+    margin-top: 40px;
+}
+/*img inte centrerad*/
+.offerElements {
+    display: inline-flex;
+    gap: 300px;
 }
 
-.heroScroller {
+.bugoniaHero {
+    position: relative;
+}
+.bugoniaHeroText {
+    position: absolute;
+
+}
+.bugoniaHero h2 {
+    color: rgb(255, 243, 110, 1);
+    /*font-family: "Source Serif 4";*/
+    font-weight: bold;
+    font-size: 120px;
+    margin: 0px;
+}
+
+.ticketsButton p {
+    display: flex;
+    justify-content: center;
+    border: 4px solid rgb(255, 243, 110, 1);
+    color: rgb(255, 243, 110, 1);
+    font-family: "Inter";
+    font-weight: bold;
+    font-size: 36px;
+    padding: 15px;;
+    width: 156px;
+}
+
+.heroMain {
+    display: flex;
+}
+
+.trailerScroller {
 }
 
 h1 {
@@ -38,13 +78,18 @@ h1 {
 
 .filmWallMain {
     display: flex;
+    justify-content: center;
     flex-wrap: wrap;
+    gap: 70px;
 }
+/*Hur göra gap icke-konstant?
+
+Ev. inte ha jc center ty sista filmerna lägger sig i mitten, i stället lägga margin på sidorna.*/
 
 .filmBoxMain {
     display: flex;
     flex-direction: column;
-    width: 25%;
+    width: 20%;
 }
 .filmBoxMain a {
     font-size: 36px;
@@ -60,4 +105,69 @@ h1 {
 }
 .filmBoxMain a {
     width: 291px;
+}
+
+footer {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    background-color: rgb(137, 34, 34, 1);
+    width: 100vw;
+    padding: 100px;
+    padding-top: 30px;
+    padding-bottom: 30px;
+}
+footer a {
+    font-size: 36px;
+    color: black;
+    font-family: "Inter";
+    font-weight: bold;
+}
+.footerDiv {
+    width: 500px;
+}
+.footerUpperText {
+    display: inline-flex;
+}
+.footerLowerText {
+    display: inline-flex;
+}
+footer button {
+    font-size: 36px;
+    color: black;
+    font-family: "Inter";
+    font-weight: bold;
+    background-color: rgb(137, 34, 34, 1);
+}
+
+.newsletter {
+    border-radius: 20px;
+    background-color: rgb(243, 210, 173, 1);
+    width: 1021px;
+    height: 224px;
+    font-size: 36px;
+    color: black;
+    font-family: "Inter";
+    font-weight: bold;
+}
+.email {
+    border-radius: 32px;
+    background-color: white;
+    width: 641px;
+    height: 80px;
+    font-family: "Arsenal";
+}
+.submit {
+    border-radius: 32px;
+    background-color: rgb(154, 123, 101, 1);
+    width: 235px;
+    height: 80px;
+    color: rgb(243, 210, 173, 1);
+    font-family: "Arsenal";
+}
+.newsletterLower {
+    display: inline-flex;
+    display: flex;
+    justify-content: center;
+    gap: 30px;
 }
