@@ -1,0 +1,196 @@
+* {
+  box-sizing: border-box;
+}
+html {
+  font-size: 16px;
+}
+
+.body-detail-page {
+    
+    /* flex-direction: column; */
+    position: relative;
+
+    margin: 0;
+    height: 100vh;
+    
+    background: linear-gradient(to top, #320808, #6A0B0B);
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+}
+
+.main-detail-page {
+  flex-direction: column;
+  align-items: center;
+}
+
+
+
+/***** HERO IMAGE *****/
+.hero {
+    width: 100vw;
+    height: 40vh;
+    position: relative;
+    overflow: hidden;
+}
+
+.hero__image {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%); /* centrera bildens mitt */
+    object-fit: cover;  /* beskär istället för att deformera */
+    width: 135%;
+    height: 111%;
+}
+
+/***** MOVIE INFO *****/
+.movie_info_container {
+    margin-top: 1rem;
+    font-family: "Arsenal";
+    color: #F3D2AD;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.movie__desctription, .movie__director, .movie__cast, .gallery {
+    width: 90%;
+    background-color: #821717;
+    border-radius: 10px;
+    padding: 0.5rem 0.75rem;
+    margin-bottom: 1rem;
+}
+
+.movie__director-label, .movie__cast-label{
+    font-weight: 600;
+}
+
+/***** TICKETS *****/
+.tickets_tickets-text {
+    font-family: "Arsenal";
+    color: #F3D2AD;
+    font-weight: bold;
+}
+
+.tickets {
+    background-color: #821717;
+    height: fit-content;
+    border-radius: 10px;
+    margin: 0 auto;
+    width: 90%;
+    margin-bottom: 1rem;
+    padding: 0.5rem 0.75rem;
+
+}
+
+.tickets_holder {
+    max-width: fit-content;  /* Så att gapet på sidorna förblir detsamma när fönstret blir stort */
+    overflow-x: auto;        /* Gör det scrollbart horisontellt */
+    scrollbar-width: none;
+    
+    display: grid;
+    grid-template-rows: repeat(1, 1fr);   
+    grid-auto-flow: column;
+    justify-items: center;
+    gap: 10px;                             /* Mellanrum mellan bilder */
+
+}
+
+.ticket {
+    background-color: #F3D2AD;
+    border-radius: 10px;
+    padding: 0.5rem;
+    width: 5rem;
+    
+    /* aspect-ratio: 1 / 1; */
+    margin: 0.5rem;
+    
+}
+
+.ticket_day {
+    font-family: "Arsenal";
+    color: #6A0B0B;
+    font-size: 0.9rem;
+    font-weight: bold;
+}
+.ticket_date_month, .ticket_time {
+    font-family: "Arsenal";
+    color: #6A0B0B;
+    font-size: 0.9rem;
+}
+
+
+
+/***** GALLERY *****/
+.gallery {
+    width: 90%;
+    margin: 0 auto;
+    padding: 3%;
+    /* min-height: fit-content; */
+    /* max-height: 70vh; */
+
+
+    display: grid;
+    grid-template-columns: 0.9fr 1.1fr; 
+    grid-template-rows: 1fr 1fr;
+    /* grid-template-rows: 50% 50%; */
+    gap: 3%;
+}
+
+.big {
+    grid-row: 1 / span 2; /* sträcker sig över båda raderna */
+}
+
+.item img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; 
+    border-radius: 10px;
+}
+
+.footer_text {
+    text-align: center;
+}
+
+@media (min-width: 900px) {
+
+    .hero {
+        height: 60vh;
+    }
+
+    .movie_info_container {
+        
+    }
+
+    .tickets{
+        height: fit-content;
+    }
+
+    .gallery {
+        width: 80%;
+    }
+
+    .movie_info_container {grid-area: info;}
+    .tickets {grid-area: tickets;}
+
+    .grid_section_desktop {
+        width: 84%;
+        display: grid;
+        grid-column: 1fr 1fr;
+        grid-template-areas: "info tickets";
+        height: 50%;
+        margin: 0 auto;
+        margin-top: 1rem;
+        justify-items: stretch;
+        align-items: stretch;
+    }
+
+    .tickets_holder {
+        display: flex;
+        flex-wrap: wrap;
+    }
+
+    
+    
+
+}

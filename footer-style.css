@@ -1,0 +1,8 @@
+/***** FOOTER *****/
+.footer_detail_page {
+    width: 90%;
+    margin: 1rem auto;
+    background-color: #821717;
+    border-radius: 10px;
+    padding: 0.5rem 0.75rem;
+}
