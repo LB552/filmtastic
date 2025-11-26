@@ -6,7 +6,7 @@
     <title>Bugonia</title>
     <link rel="stylesheet" href="style-detail-page.css">
     <link rel="stylesheet" href="header-style.css">
-    <link rel="stylesheet" href="footer-style.css">
+    <link rel="stylesheet" href="footer-new-style.css">
 
     <!-- FONTS -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -80,7 +80,7 @@
         </section>
 
         <!-- FOOTER -->
-         <?php require('footer.php'); ?>
+         <?php require('footer-new.php'); ?>
 
     </main>
 </body>
