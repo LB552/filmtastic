@@ -19,6 +19,7 @@
     border-radius: 0.625rem;
     position: fixed;
     z-index: 100;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 }
 
 
@@ -56,6 +57,13 @@
     }
 
 @media (min-width: 900px) {
+
+    .nav_logo_link {
+        text-decoration: none;
+        display: flex;
+        align-items: center;
+    }
+
     .header__container {
         display: none;
     }
@@ -80,15 +88,15 @@
         color:#7D5E48;
         display: flex;
         justify-content: space-between; 
-        margin-right: 15%;  
+        margin-right: 10%;  
     }
 
     .nav_link:hover {
-        font-size: 1.5rem;
+        /* font-size: 1.5rem; */
+        transform: scale(1.25);
     }
 
     .header {
-        width: 80%;
         height: 3rem;
         margin-top: 2.5rem;
     }

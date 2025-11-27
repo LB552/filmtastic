@@ -23,6 +23,7 @@
         <!-- HERO IMAGE -->
         <section class="hero">
             <img class="hero__image" src="resources-detail-page/Bugonia.gif">
+            <h1 class="h1_bugonia">Bugonia</h1>
         </section>
 
 

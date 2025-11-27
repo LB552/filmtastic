@@ -43,6 +43,16 @@ html {
     height: 111%;
 }
 
+.h1_bugonia {
+    z-index: 10;
+    font-size: 40px;
+    color: #F3D2AD;
+    position: absolute;
+    bottom: 0%;
+    left: 6%;
+    text-shadow: 3px 5px 20px black
+}
+
 /***** MOVIE INFO *****/
 .movie_info_container {
     margin-top: 1rem;
@@ -155,11 +165,17 @@ html {
 @media (min-width: 900px) {
 
     .hero {
-        height: 60vh;
+        height: 80vh;
+        position: relative;
     }
 
+    .h1_bugonia {
+        font-size: 80px;
+    }
+    
+
     .movie_info_container {
-        
+        margin-top: 0;
     }
 
     .tickets{
@@ -176,11 +192,11 @@ html {
     .grid_section_desktop {
         width: 84%;
         display: grid;
-        grid-column: 1fr 1fr;
+        grid-template-columns: 1fr 1fr;
         grid-template-areas: "info tickets";
         height: 50%;
         margin: 0 auto;
-        margin-top: 1rem;
+        margin-top: 3rem;
         justify-items: stretch;
         align-items: stretch;
     }

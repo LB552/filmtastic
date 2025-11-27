@@ -12,8 +12,10 @@
     <header class="header">
 
         <div class="header__logo-name">
-            <div class="header__logo"> <img class="logo_img" src="logga.png"></div>
-            <div class="header__name">FilmTastic</div>
+            <a class="nav_logo_link" href="main.php">
+                <div class="header__logo"> <img class="logo_img" src="logga.png"></div>
+                <div class="header__name">FilmTastic</div>
+            </a>
         </div>
 
         <div class="header__nav-links">
