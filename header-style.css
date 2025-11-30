@@ -22,8 +22,6 @@
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 }
 
-
-
 .header__name {
     font-family: "Arsenal SC";
     color: #9A7B65;
@@ -46,17 +44,22 @@
     font-size: 1rem;
 }
 
-
-.header__tickets-btn:hover{
-    background-color: #7D5E48;
-    font-size: 1.05rem;
-}
-
 .header__container_desktop {
         display: none;
     }
 
 @media (min-width: 900px) {
+
+    .header {
+        width: 80%;
+    }
+}
+
+@media (min-width: 1000px) {
+
+    .header {
+    width: 80%;
+    }
 
     .nav_logo_link {
         text-decoration: none;
@@ -79,6 +82,11 @@
     .header__logo-name{
         display: flex;
         align-items: center;
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .header__logo-name:hover {
+        transform: scale(1.05)
     }
 
     .header__nav-links{
@@ -91,8 +99,11 @@
         margin-right: 10%;  
     }
 
+    .nav_link {
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
     .nav_link:hover {
-        /* font-size: 1.5rem; */
         transform: scale(1.25);
     }
 
@@ -110,17 +121,16 @@
     }
 
     .header__tickets-btn {
-    /* width: 5rem;
-    font-size: 1rem; */
-    width: 7rem;
-    font-size: 1.5rem;
+        width: 7rem;
+        font-size: 1.5rem;
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+        
     }
 
     .header__tickets-btn:hover{
-        /* background-color: #7D5E48;
-        font-size: 1.05rem; */
         background-color: #7D5E48;
         font-size: 1.55rem;
+        transform: scale(1.05)
     }
 
 }

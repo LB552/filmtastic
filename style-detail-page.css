@@ -1,13 +1,17 @@
+:root {
+    --primary-card-color: #821717;
+    --primary-text-color-dark: #6A0B0B;
+}
+
 * {
   box-sizing: border-box;
 }
+
 html {
   font-size: 16px;
 }
 
 .body-detail-page {
-    
-    /* flex-direction: column; */
     position: relative;
 
     margin: 0;
@@ -23,8 +27,6 @@ html {
   align-items: center;
 }
 
-
-
 /***** HERO IMAGE *****/
 .hero {
     width: 100vw;
@@ -37,8 +39,8 @@ html {
     position: absolute;
     top: 50%;
     left: 50%;
-    transform: translate(-50%, -50%); /* centrera bildens mitt */
-    object-fit: cover;  /* beskär istället för att deformera */
+    transform: translate(-50%, -50%);
+    object-fit: cover;
     width: 135%;
     height: 111%;
 }
@@ -49,8 +51,9 @@ html {
     color: #F3D2AD;
     position: absolute;
     bottom: 0%;
-    left: 6%;
-    text-shadow: 3px 5px 20px black
+    left: 10%;
+    text-shadow: 3px 5px 20px black;
+    font-family: Times;
 }
 
 /***** MOVIE INFO *****/
@@ -65,7 +68,7 @@ html {
 
 .movie__desctription, .movie__director, .movie__cast, .gallery {
     width: 90%;
-    background-color: #821717;
+    background-color: var(--primary-card-color);
     border-radius: 10px;
     padding: 0.5rem 0.75rem;
     margin-bottom: 1rem;
@@ -83,8 +86,7 @@ html {
 }
 
 .tickets {
-    background-color: #821717;
-    height: fit-content;
+    background-color: var(--primary-card-color);
     border-radius: 10px;
     margin: 0 auto;
     width: 90%;
@@ -94,15 +96,15 @@ html {
 }
 
 .tickets_holder {
-    max-width: fit-content;  /* Så att gapet på sidorna förblir detsamma när fönstret blir stort */
-    overflow-x: auto;        /* Gör det scrollbart horisontellt */
+    max-width: fit-content;
+    overflow-x: auto;
     scrollbar-width: none;
     
     display: grid;
     grid-template-rows: repeat(1, 1fr);   
     grid-auto-flow: column;
     justify-items: center;
-    gap: 10px;                             /* Mellanrum mellan bilder */
+    gap: 10px;
 
 }
 
@@ -111,44 +113,35 @@ html {
     border-radius: 10px;
     padding: 0.5rem;
     width: 5rem;
-    
-    /* aspect-ratio: 1 / 1; */
     margin: 0.5rem;
-    
 }
 
 .ticket_day {
     font-family: "Arsenal";
-    color: #6A0B0B;
+    color: var(--primary-text-color-dark);
     font-size: 0.9rem;
     font-weight: bold;
 }
 .ticket_date_month, .ticket_time {
     font-family: "Arsenal";
-    color: #6A0B0B;
+    color: var(--primary-text-color-dark);
     font-size: 0.9rem;
 }
-
-
 
 /***** GALLERY *****/
 .gallery {
     width: 90%;
     margin: 0 auto;
     padding: 3%;
-    /* min-height: fit-content; */
-    /* max-height: 70vh; */
-
 
     display: grid;
     grid-template-columns: 0.9fr 1.1fr; 
     grid-template-rows: 1fr 1fr;
-    /* grid-template-rows: 50% 50%; */
     gap: 3%;
 }
 
 .big {
-    grid-row: 1 / span 2; /* sträcker sig över båda raderna */
+    grid-row: 1 / span 2;
 }
 
 .item img {
@@ -178,35 +171,45 @@ html {
         margin-top: 0;
     }
 
-    .tickets{
-        height: fit-content;
+    .movie__desctription, .movie__director, .movie__cast, .gallery {
+        width: 100%;
     }
 
-    .gallery {
-        width: 80%;
+    .tickets{
+        height: fit-content;
+        width: 100%;
+    }
+
+    .ticket{
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+    .ticket:hover {
+        transform: scale(1.05)
     }
 
     .movie_info_container {grid-area: info;}
     .tickets {grid-area: tickets;}
-
+    
     .grid_section_desktop {
-        width: 84%;
+        width: 80%;
         display: grid;
-        grid-template-columns: 1fr 1fr;
+        grid-template-columns: auto auto;
         grid-template-areas: "info tickets";
         height: 50%;
         margin: 0 auto;
         margin-top: 3rem;
         justify-items: stretch;
         align-items: stretch;
+        gap: 1rem;
     }
-
+    
     .tickets_holder {
         display: flex;
         flex-wrap: wrap;
     }
-
     
-    
-
+    .gallery {
+        width: 80%;
+    }
 }
+

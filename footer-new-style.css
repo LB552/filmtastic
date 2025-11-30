@@ -11,6 +11,17 @@
     justify-content: center;
 }
 
+.footer_icons {
+    display: flex;
+    justify-content: space-between;
+    width: 50px;
+}
+
+.icon{
+    width: 20px;
+    height: 20px;
+}
+
 @media (min-width: 900px) {
     
     .footer_detail_page {
