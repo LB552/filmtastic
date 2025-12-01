@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -14,11 +15,12 @@
     <link href="https://fonts.googleapis.com/css2?family=Arsenal+SC:ital,wght@0,400;0,700;1,400;1,700&family=Arsenal:ital,wght@0,400;0,700;1,400;1,700&display=swap" rel="stylesheet">
 
 </head>
+
 <body class="body-detail-page">
     <main class="main-detail-page">
-    
+
         <!-- HEADER -->
-         <?php require('header.php'); ?>
+        <?php require('header.php'); ?>
 
         <!-- HERO IMAGE -->
         <section class="hero">
@@ -53,12 +55,12 @@
             <section class="tickets">
                 <div class="tickets_tickets-text">Tickets:</div>
                 <div class="tickets_holder">
-                    <?php for ($i=0; $i < 7; $i++): ?>
-                            <div class="ticket">
-                                <div class="ticket_day"><?= date('l', strtotime("+$i days")); ?></div>
-                                <div class="ticket_date_month"><?= date("j M", strtotime("+$i day")); ?></div>
-                                <div class="ticket_time">5:40 PM</div>
-                            </div>
+                    <?php for ($i = 0; $i < 7; $i++): ?>
+                        <div class="ticket">
+                            <div class="ticket_day"><?= date('l', strtotime("+$i days")); ?></div>
+                            <div class="ticket_date_month"><?= date("j M", strtotime("+$i day")); ?></div>
+                            <div class="ticket_time">5:40 PM</div>
+                        </div>
                     <?php endfor ?>
                 </div>
             </section>
@@ -81,8 +83,9 @@
         </section>
 
         <!-- FOOTER -->
-         <?php require('footer-new.php'); ?>
+        <?php require('footer-new.php'); ?>
 
     </main>
 </body>
+
 </html>
