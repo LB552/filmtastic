@@ -1,8 +1,8 @@
 <!-- HEADER MOBILE -->
 <section class="header__container">
     <header class="header">
-            <div class="header__logo"> <img src="logga.png" height="50rem"></div>
-            <div class="header__name">FilmTastic</div>
+        <div class="header__logo"> <img src="logga.png" height="50rem"></div>
+        <div class="header__name">FilmTastic</div>
         <button class="header__tickets-btn">Tickets</button>
     </header>
 </section>
@@ -18,12 +18,12 @@
             </a>
         </div>
 
-        <div class="header__nav-links">
-            <div class="nav_link">Films</div>
-            <div class="nav_link">Events</div>
-            <div class="nav_link">Food & Drinks</div>
-            <div class="nav_link">Tickets</div>
-        </div>
+        <nav class="header__nav-links">
+            <a class="nav_link">Films</a>
+            <a class="nav_link">Events</a>
+            <a class="nav_link">Food & Drinks</a>
+            <a class="nav_link">Tickets</a>
+        </nav>
 
         <button class="header__tickets-btn">Sign in</button>
     </header>
