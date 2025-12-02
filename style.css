@@ -1,173 +1,363 @@
-:root {
-    background-color: rgb(106, 11, 11);
+* {
+    box-sizing: border-box;
+}
+
+body {
+    padding-top: 33px; /*.offer height*/
+    margin: 0;
+    height: 100vh;
     background: linear-gradient(to top, #320808, #6A0B0B);
     background-repeat: no-repeat;
     background-attachment: fixed;
 }
 
 .offer {
-    z-index: 10;
     position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 10;
     display: flex;
-    justify-content: flex-end;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
     background-color: rgb(255, 204, 000);
-    border: 3px solid rgb(106, 11, 11);
-    width: 100vw;
-    height: 142px;
-}
-.offer p {
+    border: 1px solid rgb(106, 11, 11);
+    width: 100%;
+    height: 33px;
     color: rgb(106, 11, 11);
     font-family: "Inter";
     font-weight: bolder;
-    font-size: 36px;
-    margin-top: 45px;
+    font-size: 10px;
 }
-.offer img {
-    width: 59.5px;
-    height: 59.5px;
-    margin-right: 60px;
-    margin-top: 40px;
+.offer p {
+    margin-left: 20px;
 }
-/*img inte centrerad*/
-.offerElements {
-    display: inline-flex;
-    gap: 300px;
+
+.closeButton {
+    width: 20px;
+    height: 20px;
+    background-image: url("xDefault.svg");
+    background-size: cover;
+    cursor: pointer;
+    margin-right: 20px;
+}
+.closeButton:hover {
+    background-image: url("xHover.svg");
+}
+
+.mainCarousel {
+    position: relative;
+    width: 100vw;
+    overflow: hidden; /* hides the slide that is off-screen */
+}
+
+.slideDiv {
+    width: 100vw;
+    flex-shrink: 0;
+    position: relative;
+}
+
+.slides {
+    display: flex; 
+    transition: transform 0.5s ease-in-out;
+    width: auto;
+}
+
+.slide {
+    width: 100vw;
+    /*flex-shrink: 0;*/
+    height: auto;
+    display: block;
+}
+
+.slideText {
+    position: absolute;
+    left: 5%;
+    bottom: 18%;
+
+    font-size: 10vw;
+    width: 70vw;
+
+    margin: 0;
+    padding: 0;
+
+    color: rgb(243, 210, 173, 1);
+    /*font-size: 20px;*/
+    font-weight: bold;
+
+    /*text-shadow: 0 2px 5px rgba(0,0,0,0.7);*/
+    filter: drop-shadow(0px 0px 5px rgba(0,0,0,0.3));
+}
+
+.mainTickets {
+    position: absolute;
+    left: 5%;
+    bottom: 5%;
+    
+    border: 0.4vw solid rgb(243, 210, 173, 1);
+    font-size: 3vw;
+    width: 17vw;
+    height: 7vw;
+
+    color: rgb(243, 210, 173, 1);
+    font-family: "Inter";
+    font-weight: bold;
+
+    text-align: center;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    transition: 
+        background-color 0.3s ease,
+        color 0.3s ease;
+}
+.mainTickets:hover {
+    background-color: rgb(243, 210, 173, 1);
+    color: black;
+}
+
+.navButton {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    /*padding: 20px;
+    background: rgba(0,0,0,0.4);
+    color: white;
+    font-size: 30px;
+    user-select: none;*/
+    cursor: pointer;
+
+    width: 40px;
+    height: 40px;
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+
+    opacity: 0.7;
+}
+
+#left { left: 10px;
+    background-image: url('left\ arrow.svg');
+}
+#right { right: 10px;
+    background-image: url('right\ arrow.svg');
+}
+
+h2 {
+    margin-left: 12.5%;
+    color: rgb(243, 210, 173, 1);
+    font-family: "Inter";
+    font-style: italic;
+    font-size: 31px;
 }
 
 .bugoniaHero {
+    width: 100%;
+}
+.oneBattleHero {
+    width: 100%;
+}
+
+.filmFrame {
+    padding-top: 31px;
+    border-radius: 13px;
     position: relative;
-}
-.bugoniaHeroText {
-    position: absolute;
-
-}
-.bugoniaHero h2 {
-    color: rgb(255, 243, 110, 1);
-    /*font-family: "Source Serif 4";*/
-    font-weight: bold;
-    font-size: 120px;
-    margin: 0px;
-}
-
-.ticketsButton p {
+    background-color: rgb(130, 23, 23, 1);
+    /*width: 150px;*/
+    width: calc((100% - 40px)/ 2);
+    /*height: 292px;*/
+    align-items: flex-start;
     display: flex;
     justify-content: center;
-    border: 4px solid rgb(255, 243, 110, 1);
-    color: rgb(255, 243, 110, 1);
-    font-family: "Inter";
-    font-weight: bold;
-    font-size: 36px;
-    padding: 15px;;
-    width: 156px;
+    filter: drop-shadow(0px 0px 5px rgba(0,0,0,0.3));
 }
 
-.heroMain {
+.posterWall {
+    width: 75%;
+    justify-self: center;
     display: flex;
-}
-
-.trailerScroller {
-}
-
-h1 {
-    font-size: 64px;
-    font-style: italic;
-    font-family: "Inter";
-    font-weight: bold;
-    color: rgb(255, 243, 110, 1);
-}
-
-.filmWallMain {
-    display: flex;
-    justify-content: center;
     flex-wrap: wrap;
-    gap: 70px;
+    gap: 40px;
 }
-/*Hur göra gap icke-konstant?
 
-Ev. inte ha jc center ty sista filmerna lägger sig i mitten, i stället lägga margin på sidorna.*/
-
-.filmBoxMain {
+.posterBox {
     display: flex;
     flex-direction: column;
-    width: 20%;
-}
-.filmBoxMain a {
-    font-size: 36px;
-    color: rgb(255, 243, 110, 1);
+    align-items: flex-start; /*tidigare center*/
     font-family: "Inter";
     font-weight: bold;
+    /*width: 116px;*/
+    width: 75%;
+    word-wrap: break-word;
+    overflow-wrap: break-word;
 }
-.filmBoxMain p {
-    font-size: 36px;
-    color: black;
-    font-family: "Inter";
-    font-weight: bold;
+.posterBox img {
+    width: 100%; /*tidigare 75%*/
+    border-radius: 13px;
+    /*width: 116px;
+    height: 172px;*/
+    position: relative;
+    filter: drop-shadow(0px 0px 5px rgba(0,0,0,0.3));
 }
-.filmBoxMain a {
-    width: 291px;
+.title {
+    font-size: 12px;
+    color: rgb(243, 210, 173, 1);
+}
+.genre {
+    font-size: 12px;
 }
 
-footer {
-    display: flex;
-    justify-content: center;
-    flex-wrap: wrap;
-    background-color: rgb(137, 34, 34, 1);
-    width: 100vw;
-    padding: 100px;
-    padding-top: 30px;
-    padding-bottom: 30px;
-}
-footer a {
-    font-size: 36px;
-    color: black;
+.classicBadge {
+    border-radius: 9px;
+    position: absolute;
+    bottom: 20px;
+    right: 20px;
+    border: 3px solid rgb(243, 210, 173, 1);
+    display: inline-block;
+    background-color: rgb(106, 11, 11);
+    color: rgb(243, 210, 173, 1);
     font-family: "Inter";
     font-weight: bold;
-}
-.footerDiv {
-    width: 500px;
-}
-.footerUpperText {
-    display: inline-flex;
-}
-.footerLowerText {
-    display: inline-flex;
-}
-footer button {
-    font-size: 36px;
-    color: black;
-    font-family: "Inter";
-    font-weight: bold;
-    background-color: rgb(137, 34, 34, 1);
+    font-size: 9px;
+    padding-left: 5px;
+    padding-right: 5px;
+    padding-top: 0px;
+    padding-bottom: 0px;
 }
 
 .newsletter {
-    border-radius: 20px;
+    display: none;
+    z-index: 10;
+    height: 51px;
+    justify-self: center;
+    width: 220px;
     background-color: rgb(243, 210, 173, 1);
-    width: 1021px;
-    height: 224px;
-    font-size: 36px;
-    color: black;
     font-family: "Inter";
     font-weight: bold;
+    font-size: 7px;
+    border-radius: 6px;
+    /*Måste vara display none om newsletter ska vara klickbar
+    display: none;*/
 }
-.email {
-    border-radius: 32px;
-    background-color: white;
-    width: 641px;
-    height: 80px;
+.newsletterText {
+    margin-left: 18px;
+    padding-top: 10px;
+}
+.newsletterClickables {
+    height: 18px;
+    margin-left: 18px;
     font-family: "Arsenal";
-}
-.submit {
-    border-radius: 32px;
-    background-color: rgb(154, 123, 101, 1);
-    width: 235px;
-    height: 80px;
-    color: rgb(243, 210, 173, 1);
-    font-family: "Arsenal";
-}
-.newsletterLower {
-    display: inline-flex;
     display: flex;
-    justify-content: center;
-    gap: 30px;
+    gap: 9px;
+}
+.newsletterInput {
+    background-color: white;
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    padding-left: 7px;
+    padding-right: 52px;
+}
+.newsletterInput input {
+    font-family: "Arsenal";
+    font-size: inherit;
+    font-weight: bold;
+    border: 0;
+}
+.newsletterSubmit {
+    color: rgb(243, 210, 173, 1);
+    background-color: rgb(154, 123, 101, 1);
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    padding-left: 7px;
+    padding-right: 7px;
+    font-size: 9px;
+}
+.newsletterSubmit:hover {
+    background-color: rgb(125, 94, 72, 1);
+}
+
+
+/* Ska ta Hannas footer
+footer {
+    background-color: rgb(130, 23, 23, 1);
+    color: black;
+    font-size: 9px;
+    font-weight: bold;
+    text-align: center;
+    font-family: "Inter";
+}*/
+
+@media (min-width: 900px) {
+    .offer {
+        font-size: 34.3px;
+        height: 115px;
+        border: 3px solid rgb(106, 11, 11);
+    }
+
+    .closeButton {
+    width: 60px;
+    height: 60px;
+    background-image: url("xDefault.svg");
+    background-size: cover;
+    cursor: pointer;
+    }
+    .closeButton:hover {
+    background-image: url("xHover.svg");
+    }
+    
+    h2 {
+    font-size: 56px;
+    }    
+
+    .posterWall {
+    /*margin-left: 178px;
+    margin-right: 178px;*/
+    }
+
+    .filmFrame {
+        width: calc((100% - 3 * 40px)/ 4);
+    }
+
+    .title {
+        font-size: 21px;
+    }
+    .genre {
+        font-size: 21px;
+    }
+
+    .classicBadge {
+        font-size: 17px;
+    }
+    .classicBadge p {
+        margin: 5px;
+    }
+
+    .newsletter {
+        width: 645px;
+        height: 108px;
+        border-radius: 12px;
+    }
+    .newsletterText {
+        font-size: 24px;
+        margin-bottom: 10px;
+    }
+    .newsletterInput {
+        font-size: 24px;
+    }
+    .newsletterSubmit {
+        font-size: 32px;
+    }
+    .newsletterInput {
+        padding: 20px;
+        padding-right: 200px;
+        border-radius: 30px;
+    }
+    .newsletterSubmit {
+        padding: 20px;
+        border-radius: 30px;
+    }
 }
