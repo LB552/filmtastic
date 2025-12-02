@@ -11,6 +11,13 @@ body {
     background-attachment: fixed;
 }
 
+.posterLink {
+    text-decoration: none;
+    color: inherit;
+    display: block;
+}
+.posterLink:hover { cursor: pointer; }
+
 .offer {
     position: fixed;
     top: 0;
