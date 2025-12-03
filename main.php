@@ -43,8 +43,13 @@ require __DIR__ . '/data.php';
                 <div class="mainTickets">TICKETS</div>
             </div>
         </div>
-        <div id="left" class="navButton">⟨</div>
-        <div id="right" class="navButton">⟩</div>
+        <div id="left" class="navButton"></div>
+        <div id="right" class="navButton"></div>
+        <div class="carouselDots">
+            <div class="dot" data-slide="0"></div>
+            <div class="dot" data-slide="1"></div>
+            <div class="dot" data-slide="2"></div>
+        </div>
     </div>
     <h2>Now showing</h2>
     <div class="posterWall">
@@ -103,6 +108,7 @@ require __DIR__ . '/data.php';
     </footer>-->
 <?php require('footer-new.php'); ?>
 <script>
+    const dots = document.querySelectorAll(".dot");
     const offer = document.getElementById('offerId');
     const slides = document.querySelectorAll(".slide");
     const totalSlides = slides.length;
@@ -123,7 +129,18 @@ require __DIR__ . '/data.php';
     function updateSlide() {
         document.querySelector(".slides").style.transform =
             `translateX(-${current * 100}vw)`;
+
+        dots.forEach((dot, index) => {
+            dot.classList.toggle("active", index === current);
+        });
     }
+
+    dots.forEach(dot => {
+        dot.addEventListener("click", () => {
+            current = parseInt(dot.dataset.slide);
+            updateSlide();
+        });
+    });
 
     document.getElementById("left").onclick = () => {
         current = (current === 0) ? totalSlides - 1 : current - 1;
@@ -134,6 +151,8 @@ require __DIR__ . '/data.php';
         current = (current === totalSlides - 1) ? 0 : current + 1;
         updateSlide();
     };
+
+    updateSlide();
 
     document.getElementById("newsletterToggle").addEventListener("click", function() {
         const newsletter = document.querySelector(".newsletter");

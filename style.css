@@ -320,10 +320,10 @@ footer {
     font-size: 56px;
     }    
 
-    .posterWall {
-    /*margin-left: 178px;
-    margin-right: 178px;*/
-    }
+    /*.posterWall {
+    margin-left: 178px;
+    margin-right: 178px;
+    }*/
 
     .filmFrame {
         width: calc((100% - 3 * 40px)/ 4);
@@ -366,5 +366,36 @@ footer {
     .newsletterSubmit {
         padding: 20px;
         border-radius: 30px;
+    }
+}
+
+.carouselDots {
+    position: absolute;
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    gap: 12px;
+    z-index: 5;
+}
+
+.dot {
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    border: 2px solid rgb(243, 210, 173, 1);
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.dot.active {
+    background-color: rgb(243, 210, 173, 1);
+}
+
+@media (min-width: 900px) {
+    .dot {
+        width: 20px;
+        height: 20px;
+        border-width: 3px;
     }
 }
